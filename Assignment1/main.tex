@@ -1,0 +1,205 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\usepackage{circuitikz}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{ASSIGNMENT1}
+\author{EE24BTECH11028-JADHAV RAJESH}
+\maketitle
+\newpage
+\bigskip
+\begin{enumerate}
+    \item Let $S\brak{K}=1+3+5\dots+\brak{2K-1}=3+k^2$.Then which of the following 
+              is true
+              \hfill(2004)
+    \begin{enumerate}
+        \item Principal of mathematical statement can be used to prove this formula\\
+        \item S\brak{K}$\Rightarrow$S\brak{K+1}\\
+        \item S\brak{K}$\nRightarrow$S\brak{K+1}\\
+        \item $S\brak{1}$ is correct\\
+    \end{enumerate}
+    \item The coefficient of the middle term in the binomial expansion in powers of $x$ of $\brak{1+\alpha x}^{4}$ and of $\brak{1-\alpha x}^6$ is the same if equals
+         \hfill(2004)
+    \begin{enumerate}
+         \item$\frac{3}{5}$\\
+         \item$\frac{10}{3}$\\
+         \item$\frac{-3}{10}$\\
+         \item$\frac{-5}{3}$\\
+    \end{enumerate}
+    \item The coefficient of $x^{n}$ in expansion of $\brak{1+x}\brak{1-x}^{n}$ is
+         \hfill(2004)
+    \begin{enumerate}
+        \item$\brak{-1}^{n-1}n$\\
+        \item$\brak{-1}^{n}\brak{1-n}$\\
+        \item$\brak{-1}^{n-1}\brak{n-1}^{2}$\\
+        \item$\brak{n-1}$\\
+    \end{enumerate}
+    \item The value of $^{50}C_{4}+\sum_{r=1}^{6}$$^{56-r}C_{3}$ is
+        \hfill(2005)
+    \begin{enumerate}
+        \item$^{55}C_{4}$\\
+        \item$^{55}C_{3}$\\
+        \item$^{56}C_{3}$\\
+        \item$^{56}C_{4}$\\
+    \end{enumerate}
+    \item If A=
+                 $\myvec {
+                 1 & 0\\
+                 1 & 1\\
+                 }$
+                       and I=
+                          $\myvec{
+                          1 & 0\\
+                          0 & 1\\
+                          }$
+                    ,then which of the following holds for all $n\ge1$,by the principle of mathematical induction
+                    \hfill(2005)
+                    \begin{enumerate}
+        \item$A^{n}=nA-\brak{n-1}I$\\
+        \item$A^n=2^{n-1}A-\brak{n-1}I$\\
+        \item$A^n=nA+\brak{n-1}I$\\
+        \item$A^n=2^{n-1}+\brak{n-1}I$\\
+    \end{enumerate}
+    
+    \item If the coefficient of $x^{7}$ in $\sbrak{ax^{2}+\brak{\frac{1}{bx}}}^{11}$ equals the coefficient of $x^{-7}$ in $\sbrak{ax-\brak{\frac{1}{bx^2}}}^{11}$  , then $a$ and $b$ satisfy the relation
+       \hfill(2005)
+     \begin{enumerate}
+        \item $a-b=1$\\
+        \item $a+b=1$\\
+        \item$\frac{a}{b}=1$\\
+        \item $ab=1$\\
+    \end{enumerate}
+    \item The circle $x^2+y^2=4x+8y+$ intersects the line $3x-4y=m$ at two distinct points if
+        \hfill(2010)
+    \begin{enumerate}
+            \item $-35<m<15$\\
+            \item $15<m<65$\\
+            \item $35<m<85$\\
+            \item $-85<m<-35$\\
+        \end{enumerate}
+    \item The two circles $x^2+y^2=ax$ and $x^2+y^2=c^2$ $\brak{c>0}$ touch each other if
+           \hfill(2011)
+    \begin{enumerate}
+        \item $\abs{a}=c$\\
+        \item  $a=2c$\\
+        \item $\abs{a}=2c$\\
+        \item $2\abs{a}=c$\\
+    \end{enumerate}
+    \item The lenght of the diameter of the circle which toughes the $x$-axis at the point $\vec(1,0)$ and passes through the point $\vec(2,3)$ is:
+        \hfill(2012)
+    \begin{enumerate}
+        \item$\frac{10}{3}$\\
+        \item$\frac{3}{5}$\\
+        \item$\frac{6}{5}$\\
+        \item$\frac{5}{3}$\\
+    \end{enumerate}
+    \item The circle passing through $\vec(1,2)$ and toughing the axis of $x$ at $\vec(3,0)$ and also passes the point
+        \hfill(JEE M 2013)
+    \begin{enumerate}
+         \item$\vec(-5,2)$\\
+         \item$\vec(2,-5)$\\
+         \item$\vec(5,-2)$\\
+         \item$\vec(-2,5)$\\
+    \end{enumerate}
+        \item Let $C$ be the Circle with centre at $\vec(1,1)$and radius equal to $1$. If $T$ is the centre of the at $\vec(0,y)$, passing through orgin and toughing the circle $C$ externally,then the radius of $T$ is equal to\hfill(JEE M 2014)
+    \begin{enumerate}
+        \item$\frac{1}{2}$\\
+        \item$\frac{1}{4}$\\
+        \item$\frac{\sqrt{3}}{\sqrt{2}}$\\
+        \item$\frac{\sqrt{3}}{2}$\\
+    \end{enumerate}
+    \item LOCUS of the image of the point $\vec(2,3)$ in the line $\brak{2x-3y+4}+K\brak{x-2y+3}=0,K\in R$, is a :
+        \hfill(JEE M 2015)
+    \begin{enumerate}
+         \item circle of radius${\sqrt{2}}$\\
+         \item circle of radius${\sqrt{3}}$\\
+         \item straight line parallel to $x$-axis\\
+         \item straight line parallel to $y$-axis\\
+    \end{enumerate} 
+        \item The number of common tangents to the circles $x^2+y^2-4x-6y-12=0$ and $x^2+y^2+6x+18y+26=0$, is :
+         \hfill(JEE M 2015)
+    \begin{enumerate}
+         \item $3$\\
+         \item $4$\\
+         \item $1$\\
+         \item $2$\\
+    \end{enumerate}
+         \item The centres of the those circles which tough the circle, $x^2+y^2-8x-8y-4=0$, externally and also tough the $x$-axis, lie on:\hfill(JEE M 2016)
+    \begin{enumerate}
+        \item a hyperbola\\
+        \item a parabole\\
+        \item a circle\\
+        \item an ellipse which is not a circle\\
+    \end{enumerate}
+        \item  If one of the diameter of the circle, given by the equation, $x^2+y^2-4x+6y-12=0$, is a chord of the circle $S$, whose centre is at $\vec(-3,2)$, then the radius of $S$ is:\hfill(JEE M 2016)
+    \begin{enumerate}
+         \item $5$\\
+         \item $10$\\
+         \item $5\sqrt{2}$\\
+         \item $5\sqrt{3}$\\
+    \end{enumerate}
+        \item If a tangent to the circle $x^2+y^2=1$ intersects the coordinate axes at distinct point $P$ and $Q$, then the locus of the mid-point of $PQ$ is:\hfil(JEE M 2019-9 April)
+    \begin{enumerate}
+         \item ${x^2+y^2-4x^2y^2}=0$\\
+         \item ${x^2+y^2-2xy}=0$\\
+         \item ${x^2+y^2-16x^2y^2}=0$\\
+         \item ${x^2+Y^2-2x^2y^2}=0$\\
+    \end{enumerate}
+    
+
+    
+    
+\end{enumerate}
+    
+    
+    
+     
+        
+                   
+    
+
+   \end{document}
+
