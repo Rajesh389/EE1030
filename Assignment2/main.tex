@@ -56,67 +56,43 @@
 \numberwithin{figure}{enumi}
 \renewcommand{\thetable}{\theenumi}
  \textbf{Question:} Show that points A$\vec(a,b+c)$, B$\vec(b,c+a)$, C$\vec(c,a+b)$ are collinear.\\
- \solution let the coordinates of the points be \\
-              A$\vec(a,b+c)$\\
-              B$\vec(b,c+a)$\\
-              C$\vec(c,a+b)$\\
-        we can set up the matrix as follows\\
-    \begin{align}
-          \triangle = \myvec{
-                              a & b+c & 1\\
-                              b & c+a & 1\\
-                              c & a+b & 1}
-    \end{align} 
-    using row operation\\
-    \begin{align}
-                   R_{2}\rightarrow{R_{2}-R_{1}}\\
-                   R_{3}\rightarrow{R_{3}-R{1}}
-    \end{align}
-    \begin{align}
-                  \myvec{
-                         a & b+c & 1\\
-                         b & \vec(c+b)-\vec(b+c) & 1-1\\
-                         c & \vec(a+b)-\vec(b+c) & 1-1}
-    \end{align}
-    \begin{align}
-                    \myvec{
-                            a & b+c & 1\\
-                            b-a & a-b & 0\\
-                            c-a & a-c & 0}
-    \end{align}
-                expanding alone the colume third\\
-    \begin{align}
-                   \myvec{
-                           b-a & a-b\\
-                           c-a & a-c}
-    \end{align}
-                  by using coulme operation
-    \begin{align}
-                C_{1}\rightarrow{C_{1}+C_{2}}
-    \end{align}
-    \begin{align}
-                    \myvec{
-                           0 & a-b\\
-                           0 & a-c}
-    \end{align}
-               the above process is known as coulme reduced matrix is defined as the rank.\\
-               Define the coordinates of point A, B,, and C
-    \begin{align}
-             a,b,c = 1,2,3
-    \end{align}
-
-     \begin{figure}[h!]
-	   \centering
-	  \includegraphics[width=0.5\linewidth]{Figure_1.jpg}
-	\caption{ $\vec{A}\vec{B}\vec{C}$Collinear points}
-
-
-	  \label{stemplot}
-    \end{figure}
-              
-    
-                  
- 
+ \solution : We know that points,A,B,C are collinear,if\\
+ \begin{align}
+     rank \myvec{
+                  B-A\\
+                  C-a}^{T}=1
+ \end{align}
+ \begin{align}
+                rank\myvec{
+                        b-a && a-b\\
+                        c-a && a-c
+                }^{T}=1
+ \end{align}
+ \begin{align}
+               \myvec{
+                      b-a && c-a\\
+                      a-b && a-c
+               }
+ \end{align}
+ \begin{align}
+               R_{2}\rightarrow{{R_{2}-R_{1}}}
+ \end{align}
+ \begin{align}
+              \myvec{
+                      b-a && c-a\\
+                       0   &&  0
+              }
+ \end{align}\\
+             Thus,the rank of matrix is 1 and the points are collinear.\\
+             
+             Define the coordinates of points A, B, and C.
+  \begin{align}
+                a,b.c=1,2,3
+  \end{align}
+\begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Figs/Figure_1.jpg}
+		\caption{Plot of points $\vec{A}$, $\vec{B}$ and $\vec{P}$}
+        \label{stemplot}
+\end{figure}
 \end{document}
-
-
