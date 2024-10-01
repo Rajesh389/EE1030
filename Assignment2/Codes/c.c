@@ -1,32 +1,54 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
 
-// Function to calculate the area of the triangle formed by three points
-double calculate_area(int x1, int y1, int x2, int y2, int x3, int y3) {
-    return 0.5 * fabs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
-}
+#include "libs/matfun.h"
+#include "libs/geofun.h"
 
 int main() {
-    // Coordinates of the points A, B, C
-    int a, b, c;
-    printf("Enter the values of a, b, and c: ");
-    scanf("%d %d %d", &a, &b, &c);
-
-    // Coordinates of points A, B, and C
-    int x1 = a, y1 = b + c;
-    int x2 = b, y2 = c + a;
-    int x3 = c, y3 = a + b;
-
-    // Calculate the area
-    double area = calculate_area(x1, y1, x2, y2, x3, y3);
-
-    // Check if the points are collinear
-    if (area == 0) {
-        printf("The points A(%d, %d), B(%d, %d), and C(%d, %d) are collinear.\n", x1, y1, x2, y2, x3, y3);
-    } else {
-        printf("The points A(%d, %d), B(%d, %d), and C(%d, %d) are not collinear.\n", x1, y1, x2, y2, x3, y3);
+    // Declare variables for a, b, c
+    float a, b, c;
+    
+    // Prompt the user for input
+    printf("Enter value for a: ");
+    scanf("%f", &a);
+    
+    printf("Enter value for b: ");
+    scanf("%f", &b);
+    
+    printf("Enter value for c: ");
+    scanf("%f", &c);
+    
+    // Open the file values.dat for writing
+    FILE *file = fopen("values.dat", "w");
+    
+    // Check if the file opened successfully
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        return 1; // Exit with an error code
     }
-
-    return 0;
+    
+    // Calculate the coordinates of points A, B, and C
+    float A_x = a;
+    float A_y = b + c;
+    float B_x = b;
+    float B_y = c + a;
+    float C_x = c;
+    float C_y = a + b;
+    
+    // Write the coordinates to the file
+    fprintf(file, "A: (%.2f, %.2f)\n", A_x, A_y);
+    fprintf(file, "B: (%.2f, %.2f)\n", B_x, B_y);
+    fprintf(file, "C: (%.2f, %.2f)\n", C_x, C_y);
+    
+    // Close the file
+    fclose(file);
+    
+    printf("Coordinates have been saved to values.dat\n");
+    
+    return 0; // Exit successfully
 }
-
