@@ -1,68 +1,55 @@
 #include <stdio.h>
 #include <math.h>
-
-#define N 1000  // Number of intervals for integration
-
-// Function representing the line x = 4
-double line(double y) {
-    return 4.0;
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+double integrand(double y, double a) {
+    return a - y * y;
 }
 
-// Function representing the curve x = y^2
-double curve(double y) {
-    return y * y;
-}
+double integrate(double a, double upper_limit, int n) {
+    double h = (2 * upper_limit) / n;  
+    double sum = 0.5 * (integrand(-upper_limit, a) + integrand(upper_limit, a));
 
-// Simpson's Rule for numerical integration from 'a' to 'b'
-double simpsonsRule(double (*func)(double), double a, double b) {
-    double h = (b - a) / N;
-    double sum = func(a) + func(b);
-
-    for (int i = 1; i < N; i++) {
-        double x = a + i * h;
-        sum += (i % 2 == 0 ? 2 : 4) * func(x);
+    for (int i = 1; i < n; i++) {
+        double y = -upper_limit + i * h;
+        sum += integrand(y, a);
     }
-    return (h / 3) * sum;
+    return sum * h;
 }
 
-// Function to calculate the total area between the curve and the line
-double totalArea() {
-    return simpsonsRule(line, -2, 2) - simpsonsRule(curve, -2, 2);
-}
+double find_a(double total_area) {
+    double low = 0, high = 4, mid;
+    double half_area = total_area / 2;
+    while (high - low > 1e-6) {
+        mid = (low + high) / 2;
+        double area = integrate(mid, sqrt(mid), 1000);  
 
-// Function to calculate the area from 0 to a
-double areaLeft(double a) {
-    double upperLimit = sqrt(a);  // y = sqrt(a)
-    return simpsonsRule(line, -upperLimit, upperLimit) - simpsonsRule(curve, -upperLimit, upperLimit);
+        if (area < half_area) {
+            low = mid;
+        } else {
+            high = mid;
+        }
+    }
+    return mid;
 }
 
 int main() {
-    double total_area = totalArea();  // Calculate the total area
-    double half_area = total_area / 2.0;  // Half of the total area
-
-    double a = 0.0;  // Start the search for 'a'
-    double step = 0.001;  // Step size for incrementing 'a'
-
-    // Increment 'a' until the area to the left matches half the total area
-    while (areaLeft(a) < half_area) {
-        a += step;
-    }
-
-    // Open output.tex file for writing
-    FILE *fptr = fopen("output.tex", "w");
-    if (fptr == NULL) {
+    // Open output.txt to write the result
+    FILE *file = fopen("output.txt", "w");
+    if (file == NULL) {
         printf("Error opening file!\n");
         return 1;
     }
 
-    // Save the results in output.tex
-    //fprintf(fptr, "The value of a that divides the area equally is: %.4f\n", a);
-    fprintf(fptr, "%.4f\n", pow(4, 2.0/3.0));
+    double total_area = integrate(4, 2, 1000);  
+    double a = find_a(total_area);
 
-    // Close the file
-    fclose(fptr);
+    fprintf(file, "The value of a is: %.6f\n", a);
+    fclose(file);
 
-    printf("The results have been saved to output.tex\n");
     return 0;
 }
 

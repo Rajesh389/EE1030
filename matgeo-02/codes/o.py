@@ -1,41 +1,51 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Function to read the value from output.txt
-def read_value_from_file(filename):
-    with open(filename, 'r') as file:
-        value = float(file.readline().strip())
-    return value
+# Step 1: Read the value of 'a' from output.txt
+try:
+    with open('output.txt', 'r') as file:
+        line = file.readline()
+        a = float(line.split()[-1])  # Extract the value of 'a' from the line
+except FileNotFoundError:
+    print("Error: 'output.txt' not found. Ensure the C code generated the file.")
+    exit()
+except ValueError:
+    print("Error: Couldn't read a valid number from 'output.txt'.")
+    exit()
 
-# Function to plot the area between the curve x = y^2 and the line x = 4
-def plot_area(a_value):
-    y = np.linspace(-2.5, 2.5, 400)  # y-values from -2.5 to 2.5
-    curve = y**2  # x = y^2
-    line = np.full_like(y, 4)  # Line at x = 4
+# Step 2: Define the range for y and corresponding x values
+y = np.linspace(-2, 2, 1000)  # y values from -2 to 2
+x_y2 = y ** 2  # Corresponding x = y^2 values
 
-    # Create a mask for the area to fill
-    x_fill = np.where((curve >= 0) & (curve <= 4))  # Indices where the area exists
+# Step 3: Create the plot
+plt.figure(figsize=(8, 6))
 
-    plt.figure(figsize=(8, 6))
-    plt.plot(curve, y, label=r'$x = y^2$', color='blue')  # Curve
-    plt.plot(line, y, label=r'$x = 4$', color='orange')  # Line
-    plt.axvline(x=a_value, color='green', linestyle='--', label=f'$x = {a_value:.4f}$')  # Line x = a
+# Plot the curve x = y^2
+plt.plot(x_y2, y, label=r'$x = y^2$', color='blue')
 
-    # Fill the area between the curve and the line
-    plt.fill_betweenx(y[x_fill], curve[x_fill], line[x_fill], where=(line[x_fill] >= curve[x_fill]), color='lightgrey', alpha=0.5)
+# Plot the vertical line x = 4
+plt.axvline(4, color='green', linestyle='--', label=r'$x = 4$')
 
-    plt.xlim(0, 5)
-    plt.ylim(-2.5, 2.5)
-    plt.title('Area between the Curve and the Line')
-    plt.xlabel('x-axis')
-    plt.ylabel('y-axis')
-    plt.legend()
-    plt.grid()
-    plt.show()
-    plt.savefig('/home/rajesh/EE1030/matgeo-02/fig')
+# Plot the dividing line x = a
+plt.axvline(a, color='red', linestyle='-.', label=f'$x = {a:.2f}$')
 
-# Main execution
-if __name__ == "__main__":
-    a_value = read_value_from_file('output.txt')
-    plot_area(a_value)
+# Step 4: Shade the two areas with proper boolean masks
+mask1 = x_y2 <= a  # Boolean mask for Area 1 (from curve to x = a)
+mask2 = x_y2 >= a  # Boolean mask for Area 2 (from x = a to 4)
 
+# Use fill_betweenx with matching mask sizes
+plt.fill_betweenx(y, x_y2, a, where=mask1, color='skyblue', alpha=0.5, label='Area 1')
+plt.fill_betweenx(y, a, 4, where=mask2, color='lightgreen', alpha=0.5, label='Area 2')
+
+# Add labels, title, and legend
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('Plot of Curves and Area Division')
+plt.legend(loc='best')
+
+# Display grid for better visualization
+plt.grid(True)
+
+# Step 5: Show the plot
+plt.show()
+plt.savefig('/home/rajesh/EE1030/matgeo-02/fig/fig.png')
