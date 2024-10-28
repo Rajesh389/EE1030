@@ -1,0 +1,53 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+    % Inverter switches
+    \node at (-1, 2.5) {$S_1$};
+    \node at (-1, 1.5) {$S_3$};
+    \node at (-1, 0.5) {$S_5$};
+    \node at (-1, -0.5) {$S_4$};
+    \node at (-1, -1.5) {$S_6$};
+    \node at (-1, -2.5) {$S_2$};
+ % DC source
+    \draw (-2, 3) -- (-2, -3);
+    \draw (-2, 3) -- (-1.2, 3) node[midway, above] {$+V_d$};
+    \draw (-2, -3) -- (-1.2, -3) node[midway, below] {$-V_d$};
+
+    % Vertical connections for inverter switches
+    \draw (-0.5, 2.5) -- (-0.5, -2.5);
+    \draw (-1, 2.5) -- (-0.5, 2.5);
+    \draw (-1, 1.5) -- (-0.5, 1.5);
+    \draw (-1, 0.5) -- (-0.5, 0.5);
+    \draw (-1, -0.5) -- (-0.5, -0.5);
+    \draw (-1, -1.5) -- (-0.5, -1.5);
+    \draw (-1, -2.5) -- (-0.5, -2.5);
+
+    % Output lines
+    \draw (-0.5, 2.5) -- (1, 2.5);
+    \draw (-0.5, 0.5) -- (1, 0.5);
+    \draw (-0.5, -1.5) -- (1, -1.5);
+
+    % Load resistors
+    \draw[thick] (1, 2.5) to[R=$R$] (3, 2.5);
+    \draw[thick] (1, 0.5) to[R=$R$] (3, 0.5);
+    \draw[thick] (1, -1.5) to[R=$R$] (3, -1.5);
+
+    % Load connections
+    \draw (3, 2.5) -- (3, 1.7) -- (3.5, 1.7);
+    \draw (3, 0.5) -- (3, 1.7);
+    \draw (3, -1.5) -- (3, 1.7);
+    \node at (3.75, 1.7) {$\star$};
+
+    % Phase voltage label
+    \node at (2, 3) {$V_{ph}$};
+
+    % Dashed box for 3-phase load
+    \draw[dashed] (0.5, 3.5) rectangle (4, -2.2);
+    \node at (2.25, 3.7) {3-phase balanced load};
+
+    % Inverter label
+    \node at (-0.5, -3.5) {3-phase inverter};
+
+\end{tikzpicture}
+\end{document}

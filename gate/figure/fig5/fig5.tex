@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+    % Voltage source
+    \draw (0,0) to[sV, l_=V$_1$] (0,-2);
+
+    % Resistor R
+    \draw (0,0) -- (2,0)
+    to[R=$R$] (4,0);
+    %\draw[->] (2,-0.25) to [v=V$_2$](3,-0.25);
+
+    % Current direction
+    \draw[->] (4,0) -- (4.75,0) node[above]{$I$};
+    \draw[->] (2,-0.25) -- (3,-0.25) node[below]{$V_2$};
+
+    % Load resistor R_L with impedance X
+    \draw (4.75,0) to[R=$R_L$, -] (6,0) to[L=X,-] (6,-2)--(0,-2);
+    %node[right]{$\text{Load}$};
+   % \node at (6.7, -0.5) {$X$};
+
+    % Closing the loop
+    \draw (6,0) -- (6,-2) -- (0,-2);
+    
+    % Voltage labels
+    %\node at (0.5,-1) {V$_1$};
+    %\node at (3,-1) {V$_2$};
+    \node at (5,-1) {V$_3$};
+
+\end{circuitikz}
+\end{document}

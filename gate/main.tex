@@ -62,15 +62,21 @@
 \renewcommand{\thetable}{\theenumi}
 \begin{enumerate}
     \item Asuuming both the voltage sources are in phase,the value of $R$ for which maximum power is transferred from circult $A$ to circult $B$ is\\
-\begin{circuitikz}
+%\begin{circuitikz}
     % Circuit A
-    \draw (0,0) to[sV, v=$10\,V$] (0,-2);
-    \draw ( 0,0) -- (1,0) to[R, l=$2\,\Omega$] (2,0) -- (3,0) to[R, l=$R$] (4,0)--(5,0) to[C, l=$-j1\,\Omega$] (5,-2)--(0,-2);
+ %   \draw (0,0) to[sV, v=$10\,V$] (0,-2);
+  %  \draw ( 0,0) -- (1,0) to[R, l=$2\,\Omega$] (2,0) -- (3,0) to[R, l=$R$] (4,0)--(5,0) to[C, l=$-j1\,\Omega$] (5,-2)--(0,-2);
 
     % Circuit B
   %  \draw (2,0) -- (4,0) to[R, l=$R$] (4,-2) -- (2,-2);
-    \draw  (5,0) -- (8,0) to[sV, v=$3\,V$] (8,-2)--(5,-2);
-\end{circuitikz}\\
+   % \draw  (5,0) -- (8,0) to[sV, v=$3\,V$] (8,-2)--(5,-2);
+%\end{circuitikz}\\
+\begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{figure/fig1/fig1.pdf}
+		\caption{}
+        \label{stemplot}
+\end{figure}
     \begin{enumerate}
         \item$0.8\ohm$\\
         \item$1.4\ohm$\\
@@ -112,25 +118,12 @@
        \item The feedback system shown below oscillates at 2 $\frac{rad}{s}$ when\\
     
 
-\begin{tikzpicture}
-    % Add the block
-    \node [draw, rectangle, minimum width=2.5cm, minimum height=1.5cm] (G) at (2.5,0) {$\frac{K(s+1)}{s^3 + a s^2 + 2 s + 1}$};
-    
-    % Input node
-    \node at (0,0) (input) {$R(s)$};
-    
-    % Output node
-    \node at (6,0) (output) {$Y(s)$};
-    
-    % Sum node
-    \node [circle, draw, inner sep=1pt] at (1,0) (sum) {$+$};
-    
-    % Connections
-    \draw[->] (input) -- (sum);
-    \draw[->] (sum) -- (G);
-    \draw[->] (G) -- (output);
-    \draw[->] (5,0) |- ++(0,-1) -| node[pos=0.25, right] {$-$} (sum);
-    \end{tikzpicture}
+\begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{figure/fig2/fig2.pdf}
+		\caption{}
+        \label{stemplot}
+\end{figure}
      \begin{enumerate}
          \item$K=2$ and $a=0.75$\\
          \item$K=3$ and $a=0.75$\\
@@ -168,59 +161,12 @@
     Common Data Question\\
     Common Data for Question $48$ and $49$\\
     In the 3-phase inverter circult shown, the load is balanced and the gating scheme is $180\degree$-conduction mode.All the switching devices are ideal.
-    \begin{tikzpicture}
-        
-
-
-    % Inverter switches
-    \node at (-1, 2.5) {$S_1$};
-    \node at (-1, 1.5) {$S_3$};
-    \node at (-1, 0.5) {$S_5$};
-    \node at (-1, -0.5) {$S_4$};
-    \node at (-1, -1.5) {$S_6$};
-    \node at (-1, -2.5) {$S_2$};
-
-    % DC source
-    \draw (-2, 3) -- (-2, -3);
-    \draw (-2, 3) -- (-1.2, 3) node[midway, above] {$+V_d$};
-    \draw (-2, -3) -- (-1.2, -3) node[midway, below] {$-V_d$};
-
-    % Vertical connections for inverter switches
-    \draw (-0.5, 2.5) -- (-0.5, -2.5);
-    \draw (-1, 2.5) -- (-0.5, 2.5);
-    \draw (-1, 1.5) -- (-0.5, 1.5);
-    \draw (-1, 0.5) -- (-0.5, 0.5);
-    \draw (-1, -0.5) -- (-0.5, -0.5);
-    \draw (-1, -1.5) -- (-0.5, -1.5);
-    \draw (-1, -2.5) -- (-0.5, -2.5);
-
-    % Output lines
-    \draw (-0.5, 2.5) -- (1, 2.5);
-    \draw (-0.5, 0.5) -- (1, 0.5);
-    \draw (-0.5, -1.5) -- (1, -1.5);
-
-    % Load resistors
-    \draw[thick] (1, 2.5) to[R=$R$] (3, 2.5);
-    \draw[thick] (1, 0.5) to[R=$R$] (3, 0.5);
-    \draw[thick] (1, -1.5) to[R=$R$] (3, -1.5);
-
-    % Load connections
-    \draw (3, 2.5) -- (3, 1.7) -- (3.5, 1.7);
-    \draw (3, 0.5) -- (3, 1.7);
-    \draw (3, -1.5) -- (3, 1.7);
-    \node at (3.75, 1.7) {$\star$};
-
-    % Phase voltage label
-    \node at (2, 3) {$V_{ph}$};
-
-    % Dashed box for 3-phase load
-    \draw[dashed] (0.5, 3.5) rectangle (4, -2.2);
-    \node at (2.25, 3.7) {3-phase balanced load};
-
-    % Inverter label
-    \node at (-0.5, -3.5) {3-phase inverter};
-
-\end{tikzpicture}\\
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{figure/fig3/fig3.pdf}
+		\caption{}
+        \label{stemplot}
+\end{figure}
 \item The rns value of load phase voltageis 
 \begin{enumerate}
     \item$106.1 V$\\
@@ -240,25 +186,12 @@
          $\brak{i}1\ohm$ connected at port B draws a current of $3 A$\\
            $\brak{ii}2.5\ohm$ connected at port B draws a current of $2 A$\\
            
-\begin{tikzpicture}
-    % Draw the rectangle (representing the box)
-    \draw (0,0) rectangle (3,2);
-
-    % Draw input and output terminals
-    \draw (-1,1.5) -- (0,1.5);
-    \draw (-1,0.5) -- (0,0.5);
-    \draw (3,1.5) -- (4,1.5);
-    \draw (3,0.5) -- (4,0.5);
-
-    % Draw the positive and negative signs
-    \node at (-1.2,1.5) {+};
-    \node at (-1.2,0.5) {-};
-
-    % Label terminals A and B
-    \node at (-1.3,1) {A};
-    \node at (4.3,1) {B};
-
-\end{tikzpicture}
+\begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{figure/fig4/fig4.pdf}
+		\caption{}
+        \label{stemplot}
+\end{figure}
 \item For the same network, with $6 V$ dc connected at port $A$, $1\ohm$ connected at port $B$ draws $\frac{7}{3} A$.If $8 V$ dc connected to port $A$, the open circult voltage at port $B$ is 
 \begin{enumerate}
     \item$6 V$\\
@@ -274,34 +207,12 @@
         \item$\frac{9}{7}A$
     \end{enumerate}
     \item In the circuit shown,the three voltage reading are $V_{1} = 220 V$ , $V_{2} = 122 V$, $V_{3} = 136 V$.The power factor of the load is\\
-    
-\begin{circuitikz}
-    % Voltage source
-    \draw (0,0) to[sV, l_=V$_1$] (0,-2);
-
-    % Resistor R
-    \draw (0,0) -- (2,0)
-    to[R=$R$] (4,0);
-    %\draw[->] (2,-0.25) to [v=V$_2$](3,-0.25);
-
-    % Current direction
-    \draw[->] (4,0) -- (4.75,0) node[above]{$I$};
-    \draw[->] (2,-0.25) -- (3,-0.25) node[below]{$V_2$};
-
-    % Load resistor R_L with impedance X
-    \draw (4.75,0) to[R=$R_L$, -] (6,0) to[L=X,-] (6,-2)--(0,-2);
-    %node[right]{$\text{Load}$};
-   % \node at (6.7, -0.5) {$X$};
-
-    % Closing the loop
-    \draw (6,0) -- (6,-2) -- (0,-2);
-    
-    % Voltage labels
-    %\node at (0.5,-1) {V$_1$};
-    %\node at (3,-1) {V$_2$};
-    \node at (5,-1) {V$_3$};
-
-\end{circuitikz}
+ \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{figure/fig5/fig5.pdf}
+		\caption{}
+        \label{stemplot}
+\end{figure}
 \begin{enumerate}
     \item$0.45$\\
     \item$0.50$\\
