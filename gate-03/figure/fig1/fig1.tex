@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+        % Draw top flange
+        \draw[thick] (0,0) rectangle (7,0.9);
+        
+        % Draw web
+        \draw[thick] (3.5,0) -- (3.5,-10);
+        \draw[thick] (3.5-0.305,-0.9) -- (3.5+0.305,-0.9);
+        
+        % Draw bottom flange
+        \draw[thick] (0,-10) rectangle (7,-9.1);
+        
+        % Top flange dimension
+        \draw[<->] (0,1.5) -- (7,1.5);
+        \node at (3.5,1.7) {140};
+        
+        % Bottom flange dimension
+        \draw[<->] (0,-10.5) -- (7,-10.5);
+        \node at (3.5,-11) {140};
+        
+        % Web thickness dimension
+        \draw[<->] (3.5-0.305,-4) -- (3.5+0.305,-4);
+        \node at (2.8,-4) {6.1};
+        
+        % Vertical dimension (Height of beam)
+        \draw[<->] (7.5,0.9) -- (7.5,-9.1);
+        \node at (8.5,-5) {200};
+        
+        % Flange thickness dimensions
+        \draw[<->] (7.2,0.9) -- (7.2,0);
+        \node at (7.7,0.45) {9};
+        \draw[<->] (7.2,-9.1) -- (7.2,-10);
+        \node at (7.7,-9.55) {9};
+
+        % Bottom text
+        \node at (3.5,-12) {(All dimensions are in mm)};
+    \end{tikzpicture}
+    \end{document}
