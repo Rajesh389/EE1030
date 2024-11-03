@@ -1,6 +1,15 @@
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -16,7 +25,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{tkz-euclide} 
 \usepackage{listings}
-\usepackage{gvv}                                        
+% \usepackage{gvv}                                        
 \def\inputGnumericTable{}                                 
 \usepackage[latin1]{inputenc}                                
 \usepackage{color}                                            
@@ -27,20 +36,8 @@
 \usepackage{hhline}                                           
 \usepackage{ifthen}                                           
 \usepackage{lscape}
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{problem}{Problem}
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}[theorem]{corollary}
-\newtheorem{example}{Example}[section]
-\newtheorem{definition}[problem]{definition}
-\newcommand{\BEQA}{\begin{eqnarray}}
-\newcommand{\EEQA}{\end{eqnarray}}
-\newcommand{\define}{\stackrel{\triangle}{=}}
-\theoremstyle{remark}
-\newtheorem{rem}{Remark}
 \usepackage{circuitikz}
+\usepackage{tikz}
 \usepackage{array}
 \usepackage{amsmath}
 \usepackage{tikz}
@@ -49,19 +46,26 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 
-
-
-
 \begin{document}
 
 \bibliographystyle{IEEEtran}
 \vspace{3cm}
+\title{2012-GATE-EE-40-52}
+\author{EE24BTECH11028 - Jadhav Rajesh}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
 
-\title{2018-GATE-CE-40-52}
-\author{EE24BTECH11028-JADHAV RAJESH}
-\maketitle
-\newpage
-\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+
 \begin{enumerate}
     \item An RCC short column $\brak{with lateral ties}$ of rectangular cross section of $250 mm * 300 mm$ is reinforced with four numbers of $16 mm$ diameter longitudinal bars. The grades of steel and concrete are $Fe415$ and $M20$,respectively. Neglect eccentricity effect. Considering limit state of collapse i  compression $\brak{IS 456 : 2000}$,the axial load carrying capacity of the column $\brak{in kN, up to one decimal place}$,is \\
  \item An  RCC beam of rectangular cross section has factored shear of $200 kN$ at its critical section. Its width $b$ is $250 mm$ and effective depth $d$ is $350 mm$.Assume design shear strength $\tau_{c}$ of concrete as $0.62 N/mm^{2}$ and maximum allowable shear stress $\tau_{c,max}$ in concrete as $2.8 N/mm^{2}$.If two legged $10 mm$ diameter vertical stirrup of $Fe250$ grade steel are used, then the required spacing $\brak{in cm,up to one decimal place}$ as per limit state method will be\\
@@ -84,10 +88,6 @@
         \label{stemplot}
 
 \end{figure}
-
-
-
-
 
  Given that $E = 2 * 10^{11} N/m^{2},A=10 mm^{2},L=1 m$ and $p=1 kN$.The horizontal displacement of joint C $\brak{in mm,up to one decimal place}$ is\\
 
