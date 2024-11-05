@@ -99,27 +99,14 @@
      \item An assignment problem is solved to minimize the total processing time of four jobs $\brak{1,2,3 and 4}$ on four different machines such that each job is processed exactly by one machine and each machine processes exactly one job. The minimum total processing time is found to be $500$ minutes. Due to a change in design, the processing time of job $4$ on each machine has increased by $20$ minutes. The revised minimum total process time will be $\_\_\_\_$ minutes $\brak{in integer}$.\\
      \item The product structure diagram shows the number of different components required 
      at each level to produce one unit of the final product $P$. If there are $50$ units of on-hand inventory of component $A$, the number of additional units of component $A$ needed to produce $10$ units of product $10$ units of $P$ is $\_\_\_\_ \brak{in integer}$.\\
-\begin{tikzpicture}[
-  level distance=1.5cm,
-  level 1/.style={sibling distance=4cm},
-  level 2/.style={sibling distance=3cm},
-  level 3/.style={sibling distance=2cm},
-  every node/.style={draw, rectangle, minimum width=1.5cm, minimum height=1cm}
-  ]
+\begin{figure}[h!]
+         \centering
+        \includegraphics[width=0.7\linewidth]{figure/fig3/fig3.pdf}
+		\caption{}
+        \label{stemplot}
 
-% Root node
-\node {P (1)}
-  % Level 1 nodes
-  child {node {A (4)}}
-  child {node {B (2)}
-    % Level 2 nodes
-    child {node {C (1)}}
-    child {node {D (3)}
-      % Level 3 node
-      child {node {A (2)}}
-    }
-  };
-\end{tikzpicture}
+\end{figure}
+
      \item Consider a one-dimensional steady heat conduction process through a solid slab of 
      thickness $0.1 m$. The higher temperature side $A$ has a surface temperature of $80\degree^{c}$, and the heat transfer rate per unit area to low temperature side $B$ is$ 4.5 kW/m^{2}$. The thermal conductivity of the slab is $15 W/m.K$. The rate of entropy generation per unit area during the heat transfer process is $\_\_\_\_ W/m^{2}.K \brak{round off to 2 decimal places}$.\\
      \item In a steam power plant based on Rankine cycle, steam is initially expanded in a 

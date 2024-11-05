@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[
+  level distance=1.5cm,
+  level 1/.style={sibling distance=4cm},
+  level 2/.style={sibling distance=3cm},
+  level 3/.style={sibling distance=2cm},
+  every node/.style={draw, rectangle, minimum width=1.5cm, minimum height=1cm}
+  ]
+
+% Root node
+\node {P (1)}
+  % Level 1 nodes
+  child {node {A (4)}}
+  child {node {B (2)}
+    % Level 2 nodes
+    child {node {C (1)}}
+    child {node {D (3)}
+      % Level 3 node
+      child {node {A (2)}}
+    }
+  };
+\end{tikzpicture}
+\end{document}
