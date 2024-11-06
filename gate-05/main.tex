@@ -1,0 +1,228 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{arrows, calc, positioning, 3d}
+\usepackage{amsmath}
+\usepackage{array}
+
+
+
+
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+\title{2024-GATE-ME-27-37}
+\author{EE24BTECH11028 - Jadhav Rajesh}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{enumerate}
+\item A rigid massless tetrahedron is placed such that vertex $O$ is at the origin and the other three vertices $a$,$B$, and $C$ lie on the coordinate axes as shown in the figure.The body is acted on by three point loads, of which one is acting at $A$ along $x$-axis and another at point $B$ along $y$-axis. For the body to be in equilibrium, the third point load acting at point $o$ must be\\\\
+\begin{figure}[h!]
+         \centering
+        \includegraphics[width=0.7\linewidth]{figure/fig1/fig1.pdf}
+		\caption{}
+        \label{stemplot}
+
+\end{figure}
+\begin{enumerate}
+    \item along $z$-axis\\
+    \item in $x-y$ plane but not along $x$ or $y$ axis\\
+    \item in $y-z$ plane but not along $y$ or $z$ axis\\
+    \item in $z-x$ plane but not along $z$ or $x$ axis
+\end{enumerate}
+\item The phases present in pearlite are\\
+\begin{enumerate}
+    \item austenite and ferrite\\
+    \item cementite and austenite\\
+    \item ferrite and cementite\\
+    \item martensite and ferrite
+\end{enumerate}
+\item The "Earing" phenomenon in metal forming is associated with\\
+\begin{enumerate}
+    \item deep drawing\\
+    \item rolling\\
+    \item extrusion\\
+    \item forging
+\end{enumerate}
+\item The grinding wheel used to provide the best surface finish is\\
+\begin{enumerate}
+   \item $A36L5V$\\
+    \item $A54L5V$\\
+    \item $60L5V$\\
+   \itm $80L5V$
+\end{enumerate}
+\item The allowance provided to a pattern for easy withdrawal from a sand mold is\\
+\begin{enumerate}
+    \item finishing\\
+    \item shrinkage allowance\\
+    \item distortion allowance\\
+    \item shake allowance   
+\end{enumerate}
+   \item The most suitable electrode material used for joining low alloy steels using Gas Metal Arc Welding $\brak{GMAW}$\\
+ \begin{enumerate}
+   \item copper\\
+   \item cadmium\\
+   \item low alloy steel\\
+   \item tungsten
+ \end{enumerate}
+ \item The preparatory function in computer numerical controlled $\brak{CNC}$ machine programing are denoted by the alphabet\\
+ \begin{enumerate}
+     \item $G$\\
+     \item $M$\\
+     \item $P$\\
+     \item $O$
+ \end{enumerate}
+ \item A set of job $U$,$V$,$W$,$X$,$Y$,$Z$ arrive at time $t=0$ to a production line consisting of two workstations in series. Each jo must be processed by both workstations in sequence $\brak{i.e., the first followed by the second}$. The process time $\brak{in minutes}$ for each job on each workstation in the production line are given below.\\
+
+ The sequence in which the jobs must be processed by the production line if the total makespan of production is to be minimized is\\
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Job} & \textbf{U} & \textbf{V} & \textbf{W} & \textbf{X} & \textbf{Y} & \textbf{Z} \\ \hline
+Workstation 1 & 5 & 7 & 3 & 4 & 6 & 8 \\ \hline
+Workstation 2 & 4 & 6 & 6 & 8 & 5 & 7 \\ \hline
+\end{tabular}
+\end{table}
+ 
+\begin{enumerate}
+    \item$W-X-Z-V-Y-U$\\
+    \item$W-X-V-Z-Y-U$\\
+    \item$W-X-Z-V-Y-X$\\
+    \item$U-Y-V-Z-X-W$\\
+\end{enumerate}
+\item A queueing system has one single server workstation that admits an infinitely long queue. The rate of arrival of job to the queueing system follows the poisson distribution with a mean of $5$ jobs/hour. The service time of the server is exponentially distributed with a man of $6$ minutes. In steady state operatation of the queueing system, the probability that the server is not busy at any point in time is\\
+\begin{enumerate}
+    \item$0.20$\\
+    \item$0.17$\\
+    \item$0.50$\\
+    \item$0.83$\\
+\end{enumerate}
+\item The matrix $\myvec{1 && a\\ 8 && 3}$ $\brak{where a > 0}$ has a negative if $a$ is greater than\\
+\begin{enumerate}
+    \item$\frac{3}{8}$\\
+     \item$\frac{1}{8}$\\
+      \item$\frac{1}{4}$\\
+       \item$\frac{1}{5}$\\
+\end{enumerate}
+\item In the pipe network shown in the figure, all pipes have the same cross-section and
+can be assumed to have the same friction factor. The pipes connecting points $W$, $N$,
+and $S$ with point $J$ have an equal length $L$. The pipe connecting points $J$ and $E$ has a
+length $10L$. The pressures at the ends $N$, $E$, and $S$ are equal. The flow rate in the pipe
+connecting $W$ and $J$ is $Q$. Assume that the fluid flow is steady, incompressible, and
+the pressure losses at the pipe entrance and junction are negligible. Consider the
+following statements:\\
+$I$ : The flow rate in pipe connecting $J$ and $E$ is $Q/21$.\\
+$II$: The pressure difference between $J$ and $N$ is equal to the pressure difference
+between $J$ and $E$.\\
+Which one of the following options is CORRECT?\\
+
+\begin{figure}[h!]
+         \centering
+        \includegraphics[width=0.7\linewidth]{figure/fig2/fig2.pdf}
+		\caption{}
+        \label{stemplot}
+
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item $I$ is True and $I$I is False\\
+    \item $I$ is False and $II$ is True\\
+    \item Both $I$ and $II$ are True\\
+     \item Both $I$ and $II$ are False\\
+\end{enumerate}
+\item A company orders gears in conditions identical to those considered in the economic
+order quantity $\brak{EOQ}$ model in inventory control. The annual demand is $8000$ gears,
+the cost per order is $300$ rupees, and the holding cost is $12$ rupees per month per gear.
+The company uses an order size that is $25\%$ more than the optimal order quantity
+determined by the EOQ model. The percentage change in the total cost of ordering
+and holding inventory from that associated with the optimal order quantity is\\
+\begin{enumerate}
+\item $2.5$\\
+\item $5$\\
+\item $0$\\
+\item $12.5$\\
+\end{enumerate}
+\item At the current basic feasible solution $\brak{bfs} v_{0} \brak{v_{0} \in R^{5}}$, the simplex method yields the following form of a linear programming problem in standard form.
+minimize $z=-x_{1}-2x_{2}$\\
+s.t      $x_{3}=2+2x_{1}-x_{2}$\\
+         $x_{5}=3-x_{1}$\\
+         $x_{1},x_{2},x_{3},x_{4},x_{5} \geq$
+Here the objective function is written as a function of the non-basic variables. If the
+simplex method moves to the adjacent bfs $v_{1} \brak{v_{1} \in R^{5}}$ that best improves the
+objective function, which of the following represents the objective function at $v_{1}$,
+assuming that the objective function is written in the same manner as above?\\
+\begin{enumerate}
+    \item$z=-4-5x_{1}+2x_{2}$\\
+    \item$z=-3+x_{5}+2x_{2}$\\
+    \item$z=-4-5x_{1}+2x_{4}$\\
+    \item$z=-6-5x_{1}+2x_{3}$\\
+\end{enumerate}
+ 
+
+
+
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
+

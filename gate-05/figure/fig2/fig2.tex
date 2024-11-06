@@ -1,0 +1,44 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+    % Draw the horizontal and vertical lines
+    \draw[thick, ->] (-2, 0) -- (5, 0); % horizontal line (West to East)
+    \draw[thick, ->] (0, -2) -- (0, 2); % vertical line (South to North)
+
+    % Draw flow rate arrow and label
+    \draw[thick, ->] (-3, 0) -- (-2.2, 0);
+    \node at (-3.2, 0) {flow rate $Q$};
+
+    % Mark intersection point J
+    \fill (0, 0) circle (2pt);
+    \node[above right] at (0, 0) {$J$};
+
+    % Label points W, E, S, N
+    \node[above] at (-2, 0) {$W$};
+    \node[right] at (5, 0) {$E$};
+    \node[below] at (0, -2) {$S$};
+    \node[above] at (0, 2) {$N$};
+
+    % Draw L segments with arrows
+    \draw[<->] (-2, -0.4) -- (0, -0.4);
+    \node[below] at (-0.75, 0) {$L$};
+
+  %  \draw[<->] (4, 0) -- (5, 0);
+  %\node[below] at (0.75, 0) {$L$};
+
+    \draw[<->] (-0.5, 2) -- (-0.5, 0);
+    \node[left] at (0, 0.75) {$L$};
+
+    \draw[<->] (0.5, -2) -- (0.5, 0);
+    \node[right] at (0, -0.75) {$L$};
+
+    % Draw longer segment to the right with label
+    \draw[<->] (5, 0.5) -- (0, 0.5);
+    \node[above] at (3, 0) {$10L$};
+
+    % "Not to scale" label box
+    \node[draw, rectangle, minimum width=2cm, minimum height=0.8cm] at (3.5, -2) {not to scale};
+
+\end{tikzpicture}
+\end{document}
